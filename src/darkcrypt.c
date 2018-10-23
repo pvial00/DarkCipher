@@ -97,9 +97,9 @@ int main(int argc, char *argv[]) {
         if (extra != 0) {
             blocks += 1;
         }
-	reddye_random(nonce, nonce_length);
+        reddye_random(nonce, nonce_length);
         fwrite(nonce, 1, nonce_length, outfile);
-	kdf(password, key, salt, iterations, keylen);
+        kdf(password, key, salt, iterations, keylen);
         keysetup(key, nonce);
         for (int d = 0; d < blocks; d++) {
             fread(block, buflen, 1, infile);
@@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {
             blocks += 1;
         }
         fread(nonce, 1, nonce_length, infile);
-	kdf(password, key, salt, iterations, keylen);
+        kdf(password, key, salt, iterations, keylen);
         keysetup(key, nonce);
         for (int d = 0; d < blocks; d++) {
             fread(block, buflen, 1, infile);

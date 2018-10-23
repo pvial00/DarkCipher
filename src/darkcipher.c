@@ -70,9 +70,9 @@ void * crypt(unsigned char * data, unsigned char * key, unsigned char * nonce, i
         k[1] = (output & 0x0000FF00) >> 8;
         k[2] = (output & 0x00FF0000) >> 16;
         k[3] = (output & 0xFF000000) >> 24;
-	if (b == (blocks - 1) && (extra != 0)) {
-	    l = extra;
-	}
+        if (b == (blocks - 1) && (extra != 0)) {
+            l = extra;
+        }
 
 	for (i = 0; i < l; i++) {
             data[c] = data[c] ^ k[i];

@@ -76,7 +76,7 @@ void * crypt(unsigned char * data, unsigned char * key, unsigned char * nonce, i
 
 	for (i = 0; i < l; i++) {
             data[c] = data[c] ^ k[i];
-	    c += 1;
+            c += 1;
 	}
     }
 }

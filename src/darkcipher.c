@@ -51,7 +51,7 @@ void keysetup(unsigned char *key, unsigned char *nonce) {
     F(j, ct);
 }
 
-void * crypt(unsigned char * data, unsigned char * key, unsigned char * nonce, int datalen) {
+void * crypt(unsigned char * data, unsigned char * key, unsigned char * nonce, long datalen) {
     long c = 0;
     int i = 0;
     int l = 4;

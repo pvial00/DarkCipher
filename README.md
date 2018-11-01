@@ -6,6 +6,6 @@ In order to break DarkCipher, one must discover the entire 256 bit state.  DarkC
 
 # Algorithm description
 
-Dark initializes a 256 bit array (8 x 32 bit words) with the key.  Half of the array is XORed with the nonce and first round begin.  Each round, each array elemebt is added modulo 2^32 to the element to the right of it, XORed with the value prior to the addition and then rotated left 2 bits.  The 8, 32 bit words are then added and XORed together to create 32 output bits which is XORed with the 4 input bytes.
+Dark initializes a 256 bit array (8 x 32 bit words) with the key.  Half of the array is XORed with the nonce and first round begin.  Each round, each array element is added modulo 2^32 to the element to the right of it, XORed with the value prior to the addition and then rotated left 2 bits.  The 8, 32 bit words are then added and XORed together to create 32 output bits which is XORed with the 4 input bytes.
 
 The complexity to solve for the state at any given block of 32 bits in the ciphertext is the same complexity to brute force the key.

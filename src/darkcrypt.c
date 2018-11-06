@@ -20,7 +20,7 @@ void F(uint32_t j, uint32_t ct) {
     uint32_t x;
     for (i = 0; i < 8; i++) {
         x = r[i];
-        r[i] = (r[i] + r[(i + 1) % 8] + j) & 0xFFFFFFFF;
+        r[i] = (r[i] + r[(i + 1) & 0x07] + j) & 0xFFFFFFFF;
         r[i] = r[i] ^ x;
         r[i] = rotate(r[i], 2) & 0xFFFFFFFF;
         j = (j + r[i] + ct) & 0xFFFFFFFF;

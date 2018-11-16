@@ -17,21 +17,12 @@ void *F(struct dark_state *state) {
     int i;
     uint32_t x;
     for (i = 0; i < 8; i++) {
-<<<<<<< HEAD
         x = state->r[i];
         state->r[i] = (state->r[i] + state->r[(i + 1) % 8] + state->j) & 0xFFFFFFFF;
         state->r[i] = state->r[i] ^ x;
         state->r[i] = rotate(state->r[i], 2) & 0xFFFFFFFF;
         state->j = (state->j + state->r[i] + state->c) & 0xFFFFFFFF;
         state->c = (state->c + 1) & 0xFFFFFFFF;
-=======
-        x = r[i];
-        r[i] = (r[i] + r[(i + 1) & 0x07] + j) & 0xFFFFFFFF;
-        r[i] = r[i] ^ x;
-        r[i] = rotate(r[i], 2) & 0xFFFFFFFF;
-        j = (j + r[i] + ct) & 0xFFFFFFFF;
-        ct = (ct + 1) & 0xFFFFFFFF;
->>>>>>> 49b4cba365c180ffcd64042317baf4874b581e51
     }
 }
 

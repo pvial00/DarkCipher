@@ -28,9 +28,8 @@ void F(uint32_t j, uint32_t ct) {
 
         r[i] = rotateleft(r[i], 2) & 0xFFFFFFFF;
 
-        j = (j + r[i] + ct) & 0xFFFFFFFF;
+        j = (j + r[i]) & 0xFFFFFFFF;
 
-        ct = (ct + 1) & 0xFFFFFFFF;
 
     }
 

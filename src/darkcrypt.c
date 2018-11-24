@@ -9,6 +9,7 @@ int keylen = 32;
 struct dark_state {
     uint32_t r[8];
     uint32_t j;
+    uint32_t c;
 };
 
 uint32_t rotate(uint32_t a, uint32_t b) {

@@ -30,6 +30,7 @@ void F(uint32_t j, uint32_t ct) {
 
         j = (j + r[i]) & 0xFFFFFFFF;
 
+        c = (c + 1) & 0xFFFFFFFF;
 
     }
 

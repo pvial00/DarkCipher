@@ -23,7 +23,8 @@ void *F(struct dark_state *state) {
         state->r[i] = (state->r[i] + state->r[(i + 1) % 8] + state->j) & 0xFFFFFFFF;
         state->r[i] = state->r[i] ^ x;
         state->r[i] = rotate(state->r[i], 2) & 0xFFFFFFFF;
-        state->j = (state->j + state->r[i]) & 0xFFFFFFFF;
+        state->j = (state->j + state->r[i] + state->c) & 0xFFFFFFFF;
+        state->c = (state->c + 1) & 0xFFFFFFFF;
     }
 }
 
